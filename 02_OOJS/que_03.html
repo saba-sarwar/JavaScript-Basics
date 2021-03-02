@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 03</title>
+</head>
+<body>
+    <h1>Explain difference between Bind and Call (example).</h1>
+    <h4>Function.prototype.bind()
+        The Bind method returns a new function, allowing you to pass in a this array and 
+        any number of arguments. Use it when you want that function to later be called with 
+        a certain context like events.</h4>
+    <h4>Function.prototype.call()
+        The method Call invokes the function and allows you to pass in arguments one 
+        by one using commas.</h4>
+
+    <script>
+        var person = {
+            name:"Rahul",
+            print: function(){
+                console.log("Name is : " ,this.name)
+            }
+        };      
+
+        p2 = {name:"Shweta"};
+        person.print();
+
+        //This will not work
+        // p2.print();
+
+        //Call Example
+        console.log("Using call function...........")
+        person.print.call(p2); //This will execute the print function, and gives desired output.
+
+        //Bind Example
+        console.log("Using bind function...........")
+        person.print.bind(p2); //This will bind but will not execute the print function.
+
+        //To print
+        var demo=person.print.bind(p2);
+        demo(p2);
+    </script>
+</body>
+</html>
