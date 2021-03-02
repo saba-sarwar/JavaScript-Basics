@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 01</title>
+</head>
+<body>
+    <h1>Create a hierarchy of person, employee and developers.</h1>
+    <h3>Person :</h3>
+    <p id="person"></p>
+    <h3>Employee :</h3>
+    <p id="employee"></p>
+    <h3>Department :</h3>
+    <p id="department"></p>
+    <script>
+        function person(){
+            this.name="rahul";
+            this.dept="general";
+        }
+
+        function employee(){
+            person.call(this);
+            this.project="ecommerce";
+        }
+
+        employee.prototype=Object.create(person.prototype);
+        employee.prototype.constructor=employee;
+
+        function department(){
+            employee.call(this);
+            this.dept="engineering"
+        }
+
+        department.prototype=Object.create(employee.prototype);
+        department.prototype.constructor=department;
+
+        var p1=new person;
+        var e1=new employee;
+        var d1=new department;
+
+        //Print object properties
+
+        document.getElementById("person").innerHTML = p1.name + "  " + p1.dept;
+        document.getElementById("employee").innerHTML = e1.name + "  " + e1.dept + "  " + e1.project;
+        document.getElementById("department").innerHTML = d1.name + "  " + d1.dept + "  " + d1.project;
+    </script>
+</body>
+</html>
