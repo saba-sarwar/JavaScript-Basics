@@ -1,6 +1,7 @@
 // To display timer for clock
 function clockTime() 
 {
+
   var date = new Date();
   var msg;
   var hours = date.getHours();
@@ -18,9 +19,9 @@ function clockTime()
   {
     msg = "Morning";
   }
-  else if((hours >=12 && prepand === 'PM') && (hours < 5 && prepand === 'PM'))
+  else if((hours ==12 && minutes >= 1 && prepand === 'PM') && (hours < 5 && prepand === 'PM') || (hours >=1 && minutes >= 1 && prepand === 'PM'))
   {
-    msg = "Afternoor";
+    msg = "Afternoon";
   }
   else if((hours >= 5 && prepand === 'PM') && (hours < 8 && prepand === 'PM'))
   {
@@ -38,6 +39,7 @@ function clockTime()
   var timeout = setTimeout(function(){
     clockTime();
   }, 1000);
+ 
 }
 clockTime();
 
