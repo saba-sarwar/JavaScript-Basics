@@ -1,0 +1,85 @@
+>>Arguments
+
+arguments is an Array-like object accessible inside functions that contains the values of 
+the arguments passed to that function.
+
+The arguments object is a local variable available within all non-arrow functions. You can refer to 
+a function's arguments inside that function by using its arguments object. It has entries for each 
+argument the function was called with, with the first entry's index at 0.
+
+For example, if a function is passed 3 arguments, you can access them as follows:
+
+arguments[0] // first argument
+arguments[1] // second argument
+arguments[2] // third argument
+Each argument can also be set or reassigned:
+
+arguments[1] = 'new value';
+The arguments object is not an Array. It is similar, but lacks all Array properties except length.
+
+>>arguments.callee
+
+The arguments.callee property contains the currently executing function.
+
+Description
+callee is a property of the arguments object. It can be used to refer to the currently executing 
+function inside the function body of that function. This is useful when the name of the function 
+is unknown, such as within a function expression with no name (also called "anonymous functions").
+
+Early versions of JavaScript did not allow named function expressions, and for this reason you could not make a recursive function expression.
+
+For example, this syntax worked:
+
+function factorial (n) {
+    return !(n > 1) ? 1 : factorial(n - 1) * n;
+}
+
+[1, 2, 3, 4, 5].map(factorial);
+but:
+
+[1, 2, 3, 4, 5].map(function(n) {
+    return !(n > 1) ? 1 : /* what goes here? */ (n - 1) * n;
+});
+did not. To get around this arguments.callee was added so you could do
+
+[1, 2, 3, 4, 5].map(function(n) {
+    return !(n > 1) ? 1 : arguments.callee(n - 1) * n;
+});
+
+>> arguments.length
+
+The arguments.length property contains the number of arguments passed to the function.
+
+Description
+The arguments.length property provides the number of arguments actually passed to a function. 
+This can be more or less than the defined parameter's count (see Function.length).
+
+Examples
+Using arguments.length
+In this example we define a function that can add two or more numbers together.
+
+function adder(base /*, n2, ... */) {
+  base = Number(base);
+  for (var i = 1; i < arguments.length; i++) {
+    base += Number(arguments[i]);
+  }
+  return base;
+}
+
+>> arguments[@@iterator]()
+
+The initial value of the @@iterator property is the same function object as the initial value of the Array.prototype.values property.
+
+Syntax
+arguments[Symbol.iterator]()
+Examples
+Iteration using for...of loop
+
+function f() {
+  // your browser must support for..of loop
+  // and let-scoped variables in for loops
+  for (let letter of arguments) {
+    console.log(letter);
+  }
+}
+f('w', 'y', 'k', 'o', 'p');
