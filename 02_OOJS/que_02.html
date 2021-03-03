@@ -11,14 +11,30 @@
     <h3>Person :</h3>
     <p id="emp"></p>
     <script>
+
+        //using let -> let has block scope
         var emp = ["rahul","riya","piyush","priyanka","aman","alisha"];
         for(let i = 0; i < emp.length; i++)
         {
             setTimeout(function(){
                 // document.getElementById("emp").innerHTML=emp[i];
                 console.log(emp[i]);
-            }, 5000*i); 
+            }, 2000*i); 
         }      
+
+
+        //using var -> var has global scope
+
+        var arr = ["rahul","riya","piyush","priyanka","aman","alisha"];
+        for(var i=0 ; i<arr.length ; i++){
+            //binding var i to functional scope, using closure
+            (function test(i){    
+                setTimeout(function(){
+                    console.log(arr[i]);
+                },i*6000);
+            })(i);
+        }
+
     </script>
 </body>
 </html>
