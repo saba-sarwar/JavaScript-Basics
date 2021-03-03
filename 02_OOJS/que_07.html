@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 07</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <h3>Converting Arrays to Strings : toString()</h3>
+    <p>toString() converts an array to a string of (comma separated) array values.</p>
+    <p id="student"></p>
+
+    <h3>Converting Arrays to Strings : join()</h3>
+    <p>The join() method also joins all array elements into a string.
+    It behaves just like toString(), but in addition you can specify the separator:</p>
+    <p id="teacher"></p>
+    
+    <h3>Remove element from array : pop()</h3>
+    <p>The pop() method removes the last element from an array:</p>
+    <p >Old array : <span id="old"></span></p>
+    <p >New array : <span id="new"></span></p>
+
+    <h3>Add element to array : push()</h3>
+    <p>The push() method adds a new element to an array (at the end): 
+        The push() method returns the new array length:</p>
+    <p >Old array : <span id="old2"></span></p>
+    <p >New array : <span id="new2"></span></p>
+
+    <h3>Shifting Elements : push()</h3>
+    <p>Shifting is equivalent to popping, working on the first element instead of the last.
+    The shift() method removes the first array element and "shifts" all other elements to a 
+    lower index.</p>
+    <p >Old array : <span id="old3"></span></p>
+    <p >New array : <span id="new3"></span></p>
+
+    <script>
+        //toString() method
+
+        var students  = ["kai","anna","bonnie","elena","stefan","damon"];
+        document.getElementById("student").innerHTML = students.toString();
+
+
+        //join() method
+
+        var teachers  = ["alaric","vardemus","kim","sabastian"];
+        document.getElementById("teacher").innerHTML = teachers.join(" * ");
+
+
+        //pop() method
+
+        var students  = ["kai","anna","bonnie","elena","stefan","damon"];
+        document.getElementById("old").innerHTML = students;
+        students.pop();
+        document.getElementById("new").innerHTML = students;
+
+
+        //push() method
+
+        var students  = ["kai","anna","bonnie","elena","stefan","damon"];
+        document.getElementById("old2").innerHTML = students;
+        students.push("caroline");
+        document.getElementById("new2").innerHTML = students;
+
+
+        //shift() method
+
+        var students  = ["kai","anna","bonnie","elena","stefan","damon"];
+        document.getElementById("old3").innerHTML = students;
+        students.shift();
+        document.getElementById("new3").innerHTML = students;
+    </script>
+</body>
+</html>
