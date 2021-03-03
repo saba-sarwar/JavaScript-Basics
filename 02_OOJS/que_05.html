@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 05</title>
+</head>
+<body>
+    <h1>Create a function which returns number of invocations and number of instances of a function.</h1>
+    <script>
+
+        var invocation_count=0;
+        var instance_count=0
+        function university(name,city){
+            this.name=name;
+            this.city=city;
+            instance_count += 1;
+        }   
+
+        university.prototype.countInvocation = function(){
+            invocation_count += 1;
+            console.log("This method is invoked  " + invocation_count + " times");
+        }
+
+        var u1 = new university("jnu", "delhi");
+        var u2 = new university("du", "delhi");
+
+        console.log("Number of instances = " + instance_count);
+        console.log(u1.countInvocation());
+        console.log(u2.countInvocation());
+    </script>
+</body>
+</html>
