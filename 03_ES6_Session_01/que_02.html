@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 04</title>
+</head>
+<body>
+    <h3>Select all the list items on the page and convert to array. Filter for only the elements 
+        that contain the word 'flexbox' map down to a list of time strings map to an array of seconds 
+        reduce to get total using .filter and .map
+    </h3>
+    <ul> 
+        <li data-time="5:17">Flexbox Video</li> 
+        <li data-time="8:22">Flexbox Video</li> 
+        <li data-time="3:34">Redux Video</li> 
+        <li data-time="5:23">Flexbox Video</li> 
+        <li data-time="7:12">Flexbox Video</li> 
+        <li data-time="7:24">Redux Video</li> 
+        <li data-time="6:46">Flexbox Video</li> 
+        <li data-time="4:45">Flexbox Video</li> 
+        <li data-time="4:40">Flexbox Video</li> 
+        <li data-time="7:58">Redux Video</li> 
+        <li data-time="11:51">Flexbox Video</li> 
+        <li data-time="9:13">Flexbox Video</li>
+        <li data-time="5:50">Flexbox Video</li> 
+        <li data-time="5:52">Redux Video</li> 
+        <li data-time="5:49">Flexbox Video</li> 
+        <li data-time="8:57">Flexbox Video</li> 
+        <li data-time="11:29">Flexbox Video</li> 
+        <li data-time="3:07">Flexbox Video</li> 
+        <li data-time="5:59">Redux Video</li> 
+        <li data-time="3:31">Flexbox Video</li>
+    </ul>
+
+    <script>
+        let arr = [];
+        for(let i=0 ; i < document.getElementsByTagName('li').length ; i++)
+        {
+            arr.push(document.getElementsByTagName('li')[i].innerText);
+        }
+
+
+        // filter() method
+        console.log("Using filter() function ....");
+        let arr2 = arr.filter(el => el.includes("Flexbox"));
+        console.log(arr2);
+
+        // map() method
+        console.log("Using map() function ....");
+        let arr3 = arr.filter(el => el.includes("Flexbox"));
+        console.log(arr3);
+    </script>
+</body>
+</html>
