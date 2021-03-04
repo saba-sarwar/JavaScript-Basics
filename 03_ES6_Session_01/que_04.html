@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 04</title>
+</head>
+<body>
+    <h3>  Extract all keys inside address object from user object using destructuring ?</h3>
+
+    <p> const user = { firstName: ‘Sahil’, lastName: ‘Dua’, 
+        Address: { Line1: ‘address line 1’, Line2: ‘address line 2’, 
+            State: ‘Delhi’, Pin: 110085, Country: ‘India’, City: ‘New Delhi’, }, 
+        phoneNo: 9999999999 }</p>
+
+    <br><br>
+    <h4>Person details : </h4>
+    <p id="person_name"></p>
+    <p id="person_add"></p>
+    <p id="person_mobile"></p>
+    <script>
+        const person = { 
+            firstName: "Sahil", 
+            lastName: "Dua", 
+            Address: { 
+                Line1: "address line 1", 
+                Line2: "address line 2", 
+                State: "Delhi", 
+                Pin: 110085, 
+                Country: "India", 
+                City: "New Delhi", 
+            },
+
+            phoneNo: 9999999999 
+        };
+
+        let{
+            firstName,
+            lastName,
+            Address :
+                {
+                    Line1,
+                    Line2,
+                    State,
+                    Pin,
+                    Country,
+                    City,
+                },
+            phoneNo,
+        } = person;
+
+        document.getElementById("person_name").innerHTML = firstName + " " +lastName;
+        document.getElementById("person_add").innerHTML = Line1 + " " + Line2 + " " + State + " " + Pin + " " + Country + " " + City;
+        document.getElementById("person_mobile").innerHTML = phoneNo;
+    </script>
+</body>
+</html>
