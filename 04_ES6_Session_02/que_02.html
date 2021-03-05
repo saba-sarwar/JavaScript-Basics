@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 02</title>
+</head>
+<body>
+    <h3>Find the possible combinations of a string and store them in a MAP? </h3>
+    <h5>Combinations of string are : </h5>
+    <p id="combinationStr"></p>
+</body>
+    <script>
+        let combinationString = (str) =>
+        {
+            var result = [];
+            var index = 0;
+            var map = new Map();
+
+            while(index < str.length)
+            {
+                var char = str.charAt(index);
+                var temp = [char];
+
+                for(var x in result) 
+                {
+                    temp.push(""+result[x]+char);
+                }
+                result = result.concat(temp);
+
+                index++;
+            }
+            map.set("keys",result);
+            return map;
+        }
+        
+        console.log(combinationString("abc"));
+
+    </script>
+</html>
