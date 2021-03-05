@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 01</title>
+</head>
+<body>
+    <h3>Filter unique array members using Set.</h3>
+    <script>
+        // Using Array.from() method
+        console.log("Using Array.from() method ....")
+        let arr = ["elena","john","caroline","damon","elijah","caroline","stefan","damon","elena"];
+        console.log("Original Array : " , arr);
+        let uniqueArr = Array.from(new Set(arr));
+        console.log("Unique Array : " , uniqueArr);
+
+        // Using sread operator
+        console.log("Using Spread Operator ....")
+        let arr2 = ["elena","john","caroline","damon","elijah","caroline","stefan","damon","elena"];
+        console.log("Original Array : ", arr2);
+        let uniqueArr2 = [...new Set(arr2)];
+        console.log("Unique Array : ", uniqueArr2);
+    </script>
+</body>
+</html>
