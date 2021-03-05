@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 03</title>
+</head>
+<body>
+    <h3>Write a program to implement a class having static functions</h3>
+</body>
+    <script>
+        class person
+        {
+            //Public Member
+            companyType = "Technology Service Company";
+
+            //Public static member
+            static companyName="TTN";
+
+            //Constructor
+            constructor(name, age)
+            {
+                this.name=name;
+                this.age=age;
+            }
+
+            displayType()
+            {
+                console.log("Company Type is : " + this.companyType);
+            }
+
+            //Static method
+            static displayName()
+            {
+                
+                console.log("Company name is : " + this.companyName);
+            }
+        }
+
+        const p1 = new person("Rohan",34);
+        // Parent class object
+        console.log("\n======================================================");
+        console.log("Person object p1 details .....");
+        
+        //Calling public method
+        console.log("Public method .....");
+        console.log(p1.displayType());
+        
+        //calling static method
+        console.log("Static method .....");
+        console.log(person.displayName(p1));   
+        console.log(p1.name + " " + p1.age);
+        
+    </script>
+</html>
