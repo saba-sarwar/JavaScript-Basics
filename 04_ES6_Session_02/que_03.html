@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 03</title>
+</head>
+<body>
+    <h3>Write a program to implement inheritance upto 3 classes.
+        The Class must  public variables and static functions</h3>
+</body>
+    <script>
+        class employee
+        {
+            //Public Member
+            companyType = "Technology Service Company";
+
+            //Public static member
+            static companyName="TTN";
+
+            //Constructor
+            constructor(name, age)
+            {
+                this.name=name;
+                this.age=age;
+            }
+
+            displayType()
+            {
+                console.log("Company Type is : " + this.companyType);
+            }
+
+            //Static method
+            static displayName()
+            {
+                
+                console.log("Company name is : " + this.companyName);
+            }
+        }
+
+        const e1 = new employee("shreya",24);
+        // Parent class object
+        console.log("\n======================================================");
+        console.log("Parent class Employee => object ....");
+        //Calling public method
+        console.log(e1.displayType());
+        //calling static method
+        console.log(employee.displayName(e1));   
+        console.log(e1.name + " " + e1.age);
+
+        class manager extends employee
+        {
+            
+            constructor(name, age, position)
+            {
+                super(name, age);
+                this.position=position;
+            }
+        }
+
+        const m1 = new manager("rahul", 35 , "manager");
+        // first generation child class
+        console.log("\n\n======================================================");
+        console.log("First Gen Child Class Manager => object ....")
+        console.log(manager.displayName());
+        console.log(m1.displayType());
+        console.log(JSON.stringify(m1));
+        
+        
+        class developer extends manager
+        {
+            constructor(name, age, position, assistant)
+            {
+                super(name, age, position);
+                this.assistant=assistant;
+            }
+        }
+
+        const d1 = new developer("ruchi", 25 , "developer" , "front end");
+
+        // second generation child class
+        console.log("\n\n======================================================");
+        console.log("Second Gen Child Class Developer => object ....")
+        console.log(developer.displayName());
+        console.log(d1.displayType());
+        console.log(JSON.stringify(d1));
+        
+    </script>
+</html>
