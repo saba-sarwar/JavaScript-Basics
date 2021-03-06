@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 09</title>
+</head>
+<body>
+    <h3>Implement Map and Set using Es6?</h3>
+    <script>
+        //Map Implementation
+        console.log("\n\nMap implementation .....");
+        let student = new Map()
+        //set() 
+        student.set('Bonnie', {phone: "12345678", address: "New Delhi"});
+
+        //get()
+        console.log(student.get('Bonnie'));
+        
+        //has()
+        console.log(student.has('Bonnie'));
+        
+        //get
+        console.log(student.get('Hilary')); // undefined
+        
+        //set
+        student.set('Harry', {phone: "6174356221", address: "London"})
+        
+        //get
+        console.log(student.get('Harry'));
+        
+        //delete()
+        student.delete('Jessie') // true
+        
+        //size
+        console.log(student.size) // 1
+
+
+
+
+        //Set Implementation
+        console.log("\n\nSet implementation .....");
+
+        var set1 = new Set(); 
+  
+        // set contains 10, 20  using add()
+        set1.add(10); 
+        set1.add(20); 
+        
+        // chanining of add() method 
+        set1.add(30).add(40).add(50); 
+        
+        // print
+        console.log("Given set : ", set1); 
+
+        //delete()
+        set1.delete(10);
+        console.log("After deleting one element : ", set1);
+
+        //clear()
+        set1.clear();
+        console.log("Removing all elements using clear() method : \n");
+        console.log("Now set is : ", set1);
+
+        //adding more elements
+        set1.add(50); 
+        set1.add(30); 
+        set1.add(40); 
+        set1.add(20); 
+        set1.add(10);
+        console.log("Adding more elements to set, Now set is : ", set1);
+
+        // using entries to get iterator 
+        var getEntriesArry = set1.entries(); 
+        console.log(getEntriesArry.next().value)
+
+        //has()
+        console.log(set1.has(50));
+
+        // values()
+        var getValues = set1.values(); 
+        console.log("Getting values : " , getValues); 
+    </script>
+</body>
+</html>
