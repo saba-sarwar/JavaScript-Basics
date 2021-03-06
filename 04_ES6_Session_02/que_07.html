@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 07</title>
+</head>
+<body>
+    <h3>Write a program to flatten a nested array to single level using arrow functions.</h3>
+    <p id="original"></p>
+    <p id="flattened"></p>
+
+    <script>
+        const arr = [1, 2, [3, 4]];
+        // To flat single level array
+        // const res = arr.flat();
+        // console.log(res);
+
+
+        // is equivalent to given arrow function
+        const res2 = arr.reduce((acc, val) => acc.concat(val), []);
+        console.log(res2);
+
+        document.getElementById("original").innerHTML = "Original Array is : " + JSON.stringify(arr);
+        document.getElementById("flattened").innerHTML = "Flattened Array is : " + JSON.stringify(res2);
+
+    </script>
+</body>
+</html>
