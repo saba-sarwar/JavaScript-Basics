@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./modules/circle.js"></script>
+    <script src="./modules/cylinder.js"></script>
+    <script src="./modules/rectangle.js"></script>
+    <title>Question 05</title>
+</head>
+<body>
+    <h3>Import a module containing the constants and method for calculating area of circle, 
+        rectangle, cylinder.</h3>
+    <p id="circle"></p>
+    <p id="cylinder"></p>
+    <p id="rectangle"></p>
+
+    <script>
+        document.getElementById("circle").innerHTML = "Area of circle is : " + c.areaCircle();
+        document.getElementById("cylinder").innerHTML = "Area of cylinder is : " + l.areaCylinder();
+        document.getElementById("rectangle").innerHTML = "Area of rectangle is : " + r.areaRectangle();
+    </script>
+</body>
+</html>
